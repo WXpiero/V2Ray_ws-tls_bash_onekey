@@ -152,7 +152,7 @@ dependency_install(){
     judge "安装 qrencode"
 
     if [[ "${ID}" == "centos" ]];then
-       ${INS} -y groupinstall "Development tools"
+       ${INS} -y groupinstall "Development tools" || ${INS} -y install gcc-c++
     else
        ${INS} -y install build-essential
     fi
